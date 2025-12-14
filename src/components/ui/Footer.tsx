@@ -88,7 +88,7 @@ const Footer = () => {
 
                     <div className="md:col-span-6">
                         <div className="relative overflow-hidden rounded-3xl border border-gray-200">
-                            <div className="relative aspect-[16/10] w-full">
+                            <div className="relative aspect-16/10 w-full">
                                 <Image
                                     src="/images/footer/footer.png"
                                     alt="Coworking space"
@@ -119,7 +119,18 @@ const Footer = () => {
                 </div>
 
                 <div className="mt-12 flex items-center justify-between border-t border-gray-200 py-6 text-sm text-gray-600">
-                    <div>© {new Date().getFullYear()} Cowork Kerala. All rights reserved.</div>
+                    <div>
+                        © {new Date().getFullYear()} Cowork Kerala. All rights reserved.{' '}
+                        <span className="mx-1">|</span> Powered by{' '}
+                        <a
+                            href="https://mastrovia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-gray-900"
+                        >
+                            mastrovia.com
+                        </a>
+                    </div>
                     <div className="flex gap-4">
                         <a className="hover:opacity-80" href="#">
                             Privacy
