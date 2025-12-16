@@ -47,9 +47,9 @@ const VirtualOffice = () => {
                 <HeroSection />
                 <AboutIntroSection />
                 <OurValuesSection />
-                <GlimpseInsideSection />
-                <TeamSection />
-                <TrustedCompaniesSection />
+                {/* <GlimpseInsideSection /> */}
+                {/* <TeamSection /> */}
+                {/* <TrustedCompaniesSection /> */}
             </Fixedw>
             <Footer />
         </>

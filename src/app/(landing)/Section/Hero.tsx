@@ -17,7 +17,7 @@ const Hero = ({ locations }: Props) => {
     const router = useRouter();
 
     const handleSearch = () => {
-        let path = '/workspace';
+        let path = '/coworking-space';
 
         if (selectedType === 'private-office') {
             path = '/private-office';
@@ -27,7 +27,7 @@ const Hero = ({ locations }: Props) => {
 
         // Use path-based city routing for workspace and private-office
         if (selectedCity) {
-            if (path === '/workspace' || path === '/private-office') {
+            if (path === '/coworking-space' || path === '/private-office') {
                 router.push(`${path}/${selectedCity.toLowerCase()}`);
                 return;
             }
@@ -79,6 +79,9 @@ const Hero = ({ locations }: Props) => {
                                 key={city.id || city.name}
                                 location={city.name}
                                 imageUrl={city.image}
+                                onClick={() =>
+                                    router.push(`/coworking-space/${city.name.toLowerCase()}`)
+                                }
                             />
                         ))}
                     </div>

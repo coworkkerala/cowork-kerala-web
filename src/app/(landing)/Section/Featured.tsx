@@ -130,7 +130,7 @@ const Featured = () => {
 
             <div className="flex justify-center">
                 <Link
-                    href="/workspace"
+                    href="/coworking-space"
                     className="rounded-full bg-[#CFEAB1] px-5 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-medium text-zinc-900 hover:bg-[#bfda9f] transition-colors tracking-wide"
                 >
                     DISCOVER MORE

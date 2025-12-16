@@ -1,4 +1,5 @@
 import React from 'react';
+import { getLocations } from '@/services/locations';
 import { Metadata } from 'next';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
@@ -40,7 +41,10 @@ export const metadata: Metadata = {
         canonical: 'https://coworkkerala.com/virtual-office',
     },
 };
-const VirtualOfficePage = () => {
+
+const VirtualOfficePage = async () => {
+    const locations = await getLocations();
+
     return (
         <>
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
@@ -49,7 +53,7 @@ const VirtualOfficePage = () => {
             </Fixedw>
             <ServicesSection />
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
-                <ContactSection />
+                <ContactSection locations={locations} />
             </Fixedw>
             <FeatureSection />
             <div className="mt-12 md:mt-24">

@@ -4,11 +4,12 @@ import React from 'react';
 type Props = {
     location: string;
     imageUrl: string;
+    onClick?: () => void;
 };
 
-const LocationCircle = ({ location, imageUrl }: Props) => {
+const LocationCircle = ({ location, imageUrl, onClick }: Props) => {
     return (
-        <div className="flex flex-col gap-3 items-center group cursor-pointer">
+        <div onClick={onClick} className="flex flex-col gap-3 items-center group cursor-pointer">
             <div className="relative size-20 sm:size-24 md:size-28 rounded-full bg-zinc-100 overflow-hidden shadow-sm group-hover:shadow-md transition-all">
                 {imageUrl && (
                     <Image

@@ -52,7 +52,7 @@ const PrivateOfficePage = async () => {
             <HeroSection />
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
                 <ContactSection locations={locations} />
-                <GallerySection />
+                {/* <GallerySection /> */}
             </Fixedw>
             <SolutionsSection />
             <div className="mt-12 md:mt-24">

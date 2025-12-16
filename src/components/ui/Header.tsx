@@ -78,7 +78,7 @@ const Header = () => {
                         onMouseLeave={() => setActiveDropdown(null)}
                     >
                         <Link
-                            href="/workspace"
+                            href="/coworking-space"
                             className="hover:text-primary-600 flex items-center gap-1 transition-colors py-2"
                         >
                             <span>Coworking Spaces</span>
@@ -90,23 +90,37 @@ const Header = () => {
                             />
                         </Link>
                         <DropdownMenu
-                            basePath="/workspace"
+                            basePath="/coworking-space"
                             isOpen={activeDropdown === 'coworking'}
                         />
                     </li>
 
-                    {/* Virtual Office - no dropdown */}
-                    <li>
+                    {/* Virtual Office with dropdown */}
+                    <li
+                        className="relative"
+                        onMouseEnter={() => setActiveDropdown('virtual')}
+                        onMouseLeave={() => setActiveDropdown(null)}
+                    >
                         <Link
                             href="/virtual-office"
-                            className="hover:text-primary-600 flex items-center gap-1 transition-colors"
+                            className="hover:text-primary-600 flex items-center gap-1 transition-colors py-2"
                         >
                             <span>Virtual Office</span>
+                            <IoIosArrowDown
+                                size={14}
+                                className={`text-zinc-400 transition-transform duration-200 ${
+                                    activeDropdown === 'virtual' ? 'rotate-180' : ''
+                                }`}
+                            />
                         </Link>
+                        <DropdownMenu
+                            basePath="/virtual-office"
+                            isOpen={activeDropdown === 'virtual'}
+                        />
                     </li>
 
                     {/* Private Office with dropdown */}
-                    <li
+                    {/* <li
                         className="relative"
                         onMouseEnter={() => setActiveDropdown('private')}
                         onMouseLeave={() => setActiveDropdown(null)}
@@ -127,6 +141,16 @@ const Header = () => {
                             basePath="/private-office"
                             isOpen={activeDropdown === 'private'}
                         />
+                    </li> */}
+
+                    {/* Temporary simple link for Private Office */}
+                    <li>
+                        <Link
+                            href="/private-office"
+                            className="hover:text-primary-600 flex items-center gap-1 transition-colors"
+                        >
+                            <span>Private Office</span>
+                        </Link>
                     </li>
 
                     <li>
@@ -173,7 +197,7 @@ const Header = () => {
                                 {mobileExpandedItem === 'coworking' && (
                                     <div className="pl-4 py-2 space-y-2 animate-in slide-in-from-top-2 fade-in duration-200">
                                         <Link
-                                            href="/workspace"
+                                            href="/coworking-space"
                                             className="block py-2 text-base text-zinc-600 hover:text-primary-600"
                                             onClick={toggleMenu}
                                         >
@@ -182,7 +206,7 @@ const Header = () => {
                                         {locations.map((loc) => (
                                             <Link
                                                 key={loc.id || loc.name}
-                                                href={`/workspace/${loc.name.toLowerCase()}`}
+                                                href={`/coworking-space/${loc.name.toLowerCase()}`}
                                                 className="block py-2 text-base text-zinc-600 hover:text-primary-600"
                                                 onClick={toggleMenu}
                                             >
@@ -193,19 +217,45 @@ const Header = () => {
                                 )}
                             </li>
 
-                            {/* Virtual Office */}
+                            {/* Virtual Office with expandable locations */}
                             <li>
-                                <Link
-                                    href="/virtual-office"
-                                    className="flex items-center justify-between border-b border-zinc-100 pb-4"
-                                    onClick={toggleMenu}
+                                <button
+                                    className="flex items-center justify-between w-full border-b border-zinc-100 pb-4"
+                                    onClick={() => toggleMobileExpand('virtual')}
                                 >
                                     <span>Virtual Office</span>
-                                </Link>
+                                    <IoIosArrowDown
+                                        size={16}
+                                        className={`text-zinc-400 transition-transform duration-200 ${
+                                            mobileExpandedItem === 'virtual' ? 'rotate-180' : ''
+                                        }`}
+                                    />
+                                </button>
+                                {mobileExpandedItem === 'virtual' && (
+                                    <div className="pl-4 py-2 space-y-2 animate-in slide-in-from-top-2 fade-in duration-200">
+                                        <Link
+                                            href="/virtual-office"
+                                            className="block py-2 text-base text-zinc-600 hover:text-primary-600"
+                                            onClick={toggleMenu}
+                                        >
+                                            All Locations
+                                        </Link>
+                                        {locations.map((loc) => (
+                                            <Link
+                                                key={loc.id || loc.name}
+                                                href={`/virtual-office/${loc.name.toLowerCase()}`}
+                                                className="block py-2 text-base text-zinc-600 hover:text-primary-600"
+                                                onClick={toggleMenu}
+                                            >
+                                                {loc.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
                             </li>
 
                             {/* Private Office with expandable locations */}
-                            <li>
+                            {/* <li>
                                 <button
                                     className="flex items-center justify-between w-full border-b border-zinc-100 pb-4"
                                     onClick={() => toggleMobileExpand('private')}
@@ -239,6 +289,17 @@ const Header = () => {
                                         ))}
                                     </div>
                                 )}
+                            </li> */}
+
+                            {/* Temporary simple link for Private Office */}
+                            <li>
+                                <Link
+                                    href="/private-office"
+                                    className="flex items-center justify-between border-b border-zinc-100 pb-4"
+                                    onClick={toggleMenu}
+                                >
+                                    <span>Private Office</span>
+                                </Link>
                             </li>
 
                             <li>

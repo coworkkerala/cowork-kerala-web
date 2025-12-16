@@ -11,19 +11,19 @@ const SpaceAdapts = () => {
             icon: IoIosPeople,
             title: 'Coworking spaces',
             description:
-                'Diam pellentesque commodo volutpat quam. Augue eget tristique nibh vitae risus eu venenatis.',
+                'Collaborative open workspaces designated for freelancers, remote workers, and growing teams.',
         },
         {
             icon: GiOfficeChair,
             title: 'Private offices',
             description:
-                'Diam pellentesque commodo volutpat quam. Augue eget tristique nibh vitae risus eu venenatis.',
+                'Fully furnished, secure private cabins tailored for teams requiring focus and privacy.',
         },
         {
             icon: PiLaptopFill,
             title: 'Virtual offices',
             description:
-                'Diam pellentesque commodo volutpat quam. Augue eget tristique nibh vitae risus eu venenatis.',
+                'Establish a professional business presence with our prime address and mail handling services.',
         },
     ];
 
@@ -65,7 +65,7 @@ const SpaceAdapts = () => {
                     {/* CTA Button */}
                     <div>
                         <Link
-                            href="/workspace"
+                            href="/coworking-space"
                             className="px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-[#CFEAB1] text-zinc-900 text-xs md:text-sm font-medium tracking-wide hover:bg-[#bfda9f] transition-colors inline-block"
                         >
                             DISCOVER MORE
@@ -79,7 +79,7 @@ const SpaceAdapts = () => {
                                 100+
                             </div>
                             <p className="text-xs sm:text-sm md:text-base text-zinc-600">
-                                Event Spaces Hosted
+                                Satisfied Customers
                             </p>
                         </div>
                         <div>

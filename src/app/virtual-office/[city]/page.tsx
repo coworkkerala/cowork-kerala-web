@@ -4,9 +4,9 @@ import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
 import Fixedw from '@/components/ui/Fixedw';
 import HeroSection from '../Section/HeroSection';
+import ServicesSection from '../Section/ServicesSection';
 import ContactSection from '../Section/ContactSection';
-import GallerySection from '../Section/GallerySection';
-import SolutionsSection from '../Section/SolutionsSection';
+import FeatureSection from '../Section/FeatureSection';
 import { getLocations } from '@/services/locations';
 
 type Props = {
@@ -18,19 +18,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // Capitalize the city name for display
     const displayCity = city.charAt(0).toUpperCase() + city.slice(1);
 
-    const title = `Private Office Space in ${displayCity} | CoWork Kerala`;
-    const description = `Set up a customised, fully private office for your team in ${displayCity}. Get independent cabins and branded suites with layout, amenities, and services tailored to your requirements.`;
+    const title = `Virtual Office in ${displayCity} | GST & Company Registration | CoWork Kerala`;
+    const description = `Get GST-compliant virtual office in ${displayCity} with a prime business address, documentation, and mail handling. Flexible pricing plans available in ${displayCity}. Book online now.`;
 
     return {
         title,
         description,
         keywords: [
-            `private office ${displayCity}`,
-            `custom office space ${displayCity}`,
-            `independent office ${displayCity}`,
-            'branded office suites',
-            'team office Kerala',
-            'dedicated office space',
+            `virtual office ${displayCity}`,
+            `GST registration address ${displayCity}`,
+            `company registration address ${displayCity}`,
+            `business address ${displayCity}`,
+            'mail handling Kerala',
+            'startup registration',
         ],
         openGraph: {
             title,
@@ -45,27 +45,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description,
         },
         alternates: {
-            canonical: `https://coworkkerala.com/private-office/${city.toLowerCase()}`,
+            canonical: `https://coworkkerala.com/virtual-office/${city.toLowerCase()}`,
         },
     };
 }
 
-const CityPrivateOfficePage = async ({ params }: Props) => {
+const CityVirtualOfficePage = async ({ params }: Props) => {
     const { city } = await params;
     const displayCity = city.charAt(0).toUpperCase() + city.slice(1);
     const locations = await getLocations();
 
     return (
         <>
-            <Fixedw className="container mx-auto md:px-8 flex flex-col">
+            <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
                 <Header />
+                <HeroSection />
             </Fixedw>
-            <HeroSection city={displayCity} />
+            <ServicesSection />
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
                 <ContactSection locations={locations} selectedCity={city} />
-                {/* <GallerySection /> */}
             </Fixedw>
-            <SolutionsSection />
+            <FeatureSection />
             <div className="mt-12 md:mt-24">
                 <Footer />
             </div>
@@ -73,4 +73,4 @@ const CityPrivateOfficePage = async ({ params }: Props) => {
     );
 };
 
-export default CityPrivateOfficePage;
+export default CityVirtualOfficePage;

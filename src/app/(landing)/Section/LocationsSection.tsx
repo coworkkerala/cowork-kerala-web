@@ -60,7 +60,7 @@ const LocationsSection = ({ locations }: Props) => {
                             className="flex-[0_0_50%] md:flex-[0_0_25%] pl-4 md:pl-6 min-w-0"
                         >
                             <Link
-                                href={`/workspace/${loc.name.toLowerCase()}`}
+                                href={`/coworking-space/${loc.name.toLowerCase()}`}
                                 className="flex flex-col gap-3 group cursor-pointer"
                             >
                                 <div className="relative w-full aspect-4/5 rounded-[30px] overflow-hidden">

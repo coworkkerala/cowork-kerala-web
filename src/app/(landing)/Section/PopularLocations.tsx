@@ -67,7 +67,7 @@ const PopularLocations = ({ locations }: Props) => {
                     {locations.map((loc) => (
                         <Link
                             key={loc.id}
-                            href={`/workspace/${loc.name.toLowerCase()}`}
+                            href={`/coworking-space/${loc.name.toLowerCase()}`}
                             className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(25%-24px)] group"
                         >
                             <div className="flex flex-col items-center">
@@ -108,7 +108,7 @@ const PopularLocations = ({ locations }: Props) => {
             {/* CTA Button */}
             <div className="flex justify-center">
                 <Link
-                    href="/workspace"
+                    href="/coworking-space"
                     className="px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-[#CFEAB1] text-zinc-900 text-xs md:text-sm font-medium tracking-wide hover:bg-[#bfda9f] transition-colors uppercase"
                 >
                     DISCOVER MORE
