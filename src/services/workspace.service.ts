@@ -37,6 +37,11 @@ export interface Workspace {
     images: string[];
     status: 'active' | 'inactive' | 'pending';
     isFeatured: boolean;
+    features?: {
+        wifi: string;
+        seats: string;
+        area: string;
+    };
 }
 
 export interface GetWorkspacesParams {
@@ -78,6 +83,16 @@ export const getWorkspaceById = async (id: string): Promise<WorkspaceResponse | 
         return response.data;
     } catch (error) {
         console.error('Error fetching workspace:', error);
+        return null;
+    }
+};
+
+export const getFeaturedWorkspaces = async (): Promise<WorkspacesResponse | null> => {
+    try {
+        const response = await apiClient.get('/api/v1/spaces/featured');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching featured workspaces:', error);
         return null;
     }
 };

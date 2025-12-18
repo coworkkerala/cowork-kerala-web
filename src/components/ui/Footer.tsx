@@ -105,7 +105,7 @@ const Footer = () => {
                                     <div className="mt-3 flex items-center gap-3">
                                         <input
                                             type="email"
-                                            placeholder="email@framer.com"
+                                            placeholder="coworkkerala@gmail.com"
                                             className="h-11 w-full rounded-md border border-white/30 bg-white/90 px-4 text-gray-900 placeholder:text-gray-500 focus:outline-none"
                                         />
                                         <button className="shrink-0 rounded-md px-4 py-2 text-white bg-black hover:bg-gray-100">

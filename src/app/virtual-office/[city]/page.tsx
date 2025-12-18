@@ -59,7 +59,7 @@ const CityVirtualOfficePage = async ({ params }: Props) => {
         <>
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">
                 <Header />
-                <HeroSection />
+                <HeroSection city={displayCity} />
             </Fixedw>
             <ServicesSection />
             <Fixedw className="container mx-auto md:px-8 flex flex-col mb-12 md:mb-24">

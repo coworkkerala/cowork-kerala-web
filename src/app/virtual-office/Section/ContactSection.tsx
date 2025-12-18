@@ -65,7 +65,10 @@ const ContactSection = ({ locations = [], selectedCity = '' }: Props) => {
     };
 
     return (
-        <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-20">
+        <section
+            id="contact-form"
+            className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-20"
+        >
             {/* Left: Image with Overlay */}
             <div className="relative h-[400px] md:h-auto rounded-3xl overflow-hidden">
                 <Image

@@ -76,10 +76,10 @@ const SpaceAdapts = () => {
                     <div className="flex sm:flex-row items-start gap-8 sm:gap-12 pt-2 md:pt-4">
                         <div>
                             <div className="text-4xl sm:text-5xl md:text-7xl font-normal text-zinc-900 mb-1 md:mb-2">
-                                100+
+                                50+
                             </div>
                             <p className="text-xs sm:text-sm md:text-base text-zinc-600">
-                                Satisfied Customers
+                                Coworking Spaces
                             </p>
                         </div>
                         <div>
@@ -87,7 +87,7 @@ const SpaceAdapts = () => {
                                 2,000+
                             </div>
                             <p className="text-xs sm:text-sm md:text-base text-zinc-600">
-                                5-Star Reviews
+                                Happy Clients
                             </p>
                         </div>
                     </div>

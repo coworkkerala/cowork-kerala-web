@@ -11,6 +11,7 @@ const contactSchema = z.object({
     name: z.string().min(1, 'Name is required'),
     email: z.string().email('Invalid email address'),
     phone: z.string().min(10, 'Phone number must be at least 10 digits'),
+    enquiryType: z.enum(['Looking for Space', 'Listing Space']),
     message: z.string().optional(),
 });
 
@@ -28,9 +29,10 @@ const ContactSection = () => {
 
     const handleFormSubmit = async (data: ContactFormValues) => {
         try {
+            const { enquiryType, ...rest } = data;
             await leadService.createLead({
-                ...data,
-                spaceType: 'General',
+                ...rest,
+                spaceType: enquiryType,
                 enquiredFor: 'Contact Page',
             });
             toast.success('Thank you! We will contact you soon.');
@@ -92,6 +94,26 @@ const ContactSection = () => {
                         )}
                     </div>
 
+                    <div className="space-y-1">
+                        <select
+                            {...register('enquiryType')}
+                            aria-label="Enquiry Type"
+                            className={`h-12 w-full rounded-xl border bg-gray-50 px-4 text-gray-900 focus:border-primary-300 focus:outline-none ${
+                                errors.enquiryType ? 'border-red-500' : 'border-gray-200'
+                            }`}
+                            defaultValue=""
+                        >
+                            <option value="" disabled>
+                                Select Enquiry Type
+                            </option>
+                            <option value="Looking for Space">Looking for Space</option>
+                            <option value="Listing Space">Listing Space</option>
+                        </select>
+                        {errors.enquiryType && (
+                            <p className="text-red-500 text-xs">{errors.enquiryType.message}</p>
+                        )}
+                    </div>
+
                     <textarea
                         {...register('message')}
                         placeholder="Message"
@@ -113,9 +135,12 @@ const ContactSection = () => {
             {/* Right: Info */}
             <div className="flex flex-col gap-6">
                 <p className="text-zinc-700 leading-relaxed">
-                    Feel free to contact us if you have any questions, concerns, or need assistance
-                    with anything at all. We are here to help and are always happy to provide
-                    support. Your satisfaction are our top priorities.
+                    Have questions, need a custom quote, or want help shortlisting spaces for your
+                    team? The CoWork Kerala team can assist with workspace discovery, virtual office
+                    selection, and end‑to‑end booking support across all major cities in Kerala.
+                    <br />
+                    Space providers can fill out the form with the “List Your Space” option to get
+                    your space added to CoWork Kerala.
                 </p>
 
                 <div className="flex items-start gap-4">

@@ -9,8 +9,8 @@ type Props = {
 
 const HeroSection = ({ city }: Props) => {
     return (
-        <section className="w-full bg-primary-100 p-6 md:p-12 mb-12 md:mb-20 px-6">
-            <div className="px-4 md:px-[12%] mx-auto">
+        <section className="w-full bg-primary-100 py-6 px-3 md:p-12 mb-12 md:mb-20">
+            <div className="md:px-[12%] mx-auto">
                 <h1 className="text-4xl md:text-6xl font-semibold text-zinc-900 mb-12">
                     Private Office{city ? ` in ${city}` : ''}
                 </h1>
@@ -22,9 +22,9 @@ const HeroSection = ({ city }: Props) => {
                             src="/images/private-office/hero-1.png"
                             alt="Private Office"
                             fill
-                            className="object-fill aspect-square"
+                            className="object-cover"
                         />
-                        <div className="absolute bottom-6 left-6 max-w-sm text-white text-sm font-medium leading-relaxed  bg-black/50 drop-shadow-md p-2 rounded-xl">
+                        <div className="absolute z-10 bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 bg-black/50 drop-shadow-md p-4 rounded-xl w-2xl max-w-[95%] md:max-w-sm text-center md:text-left text-white text-sm font-medium leading-relaxed">
                             Get the privacy and focus you need with a fully private office space.
                             24/7 access and all the benefits of our coworking community.
                         </div>

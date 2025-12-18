@@ -64,7 +64,7 @@ const ContactSection = ({ locations, selectedCity = '' }: Props) => {
         <section className="w-full px-6 md:px-12 mb-12 md:mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                 {/* Left: Image with Overlay */}
-                <div className="relative h-[500px] lg:h-auto rounded-3xl overflow-hidden group">
+                <div className="hidden lg:block relative h-[500px] lg:h-auto rounded-3xl overflow-hidden group">
                     <Image
                         src="/images/private-office/cta-1.png"
                         alt="Contact us"
