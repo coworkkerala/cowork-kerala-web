@@ -49,7 +49,7 @@ const Page = async () => {
 
     return (
         <div className="min-h-screen">
-            <Fixedw>
+            <Fixedw className="container mx-auto md:px-8 flex flex-col">
                 <Header />
                 <Hero locations={locations} />
                 <SpaceAdapts />

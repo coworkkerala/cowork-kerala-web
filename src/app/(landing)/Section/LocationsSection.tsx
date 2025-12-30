@@ -96,9 +96,12 @@ const LocationsSection = ({ locations }: Props) => {
                 </div>
             </div>
             <div className="flex justify-center mt-6">
-                <button className="bg-primary-100 text-zinc-900 px-8 py-3 rounded-full text-sm font-bold hover:bg-primary-200 transition-colors uppercase tracking-wider">
+                <Link
+                    href="/coworking-space"
+                    className="bg-primary-100 text-zinc-900 px-8 py-3 rounded-full text-sm font-bold hover:bg-primary-200 transition-colors uppercase tracking-wider"
+                >
                     View All Locations
-                </button>
+                </Link>
             </div>
         </section>
     );

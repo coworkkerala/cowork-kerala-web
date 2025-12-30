@@ -25,8 +25,8 @@ const HeroSection = ({ city }: Props) => {
                             className="object-cover"
                         />
                         <div className="absolute z-10 bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 bg-black/50 drop-shadow-md p-4 rounded-xl w-2xl max-w-[95%] md:max-w-sm text-center md:text-left text-white text-sm font-medium leading-relaxed">
-                            Get the privacy and focus you need with a fully private office space.
-                            24/7 access and all the benefits of our coworking community.
+                            Get a secure space with layout, amenities, and services configured to
+                            your requirements, so your office truly works the way you do
                         </div>
                     </div>
 
@@ -34,8 +34,9 @@ const HeroSection = ({ city }: Props) => {
                     <div className="md:col-span-5 flex flex-col gap-6">
                         <div className="mb-4">
                             <h2 className="text-2xl md:text-3xl font-medium text-zinc-900 leading-tight mb-6">
-                                Professional business address with mail handling services for remote
-                                teams.
+                                We also help companies set up customised, fully private,
+                                ready‑to‑use offices across Kerala with dedicated cabins and suites
+                                tailored to your team size and workflow.
                             </h2>
                             <Link
                                 href="/contact"

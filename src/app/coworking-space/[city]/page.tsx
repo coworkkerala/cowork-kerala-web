@@ -46,7 +46,7 @@ const CityWorkspacePage = async ({ params }: Props) => {
     return (
         <Fixedw className="container mx-auto md:px-8 flex flex-col gap-12">
             <Header />
-            <HeroSection />
+            <HeroSection currentCity={city}/>
             <FilterSection locations={locations} currentCity={city} />
             <WorkspaceListing workspaces={workspaces} locations={locations} />
             <Footer />

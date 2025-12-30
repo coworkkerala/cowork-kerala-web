@@ -41,10 +41,10 @@ const Hero = ({ locations }: Props) => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 {/* Left content */}
                 <div className="lg:col-span-7 flex flex-col gap-6 md:gap-8">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-zinc-900">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-zinc-900">
                         We help you find your ideal workspace in kerala
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-zinc-700">
+                    <p className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-700">
                         Discover premium coworking spaces and virtual offices across God{`'`}s Own
                         Country. Professional workspaces in Kochi, Trivandrum, Calicut, Thrissur and
                         more.
@@ -73,7 +73,7 @@ const Hero = ({ locations }: Props) => {
                     </div>
 
                     {/* Locations list */}
-                    <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
+                    <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-3 md:gap-4 lg:gap-6">
                         {locations.map((city) => (
                             <LocationCircle
                                 key={city.id || city.name}
