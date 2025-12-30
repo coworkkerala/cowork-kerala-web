@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const HeroSection = ({ currentCity }: { currentCity: string }) => {
+const HeroSection = ({ currentCity }: { currentCity?: string }) => {
     return (
         <section className="w-full relative">
             <div className="absolute -left-9 -top-9 size-24 rounded-full bg-primary-50" />
