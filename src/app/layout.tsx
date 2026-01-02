@@ -7,7 +7,12 @@ export const metadata: Metadata = {
     title: 'Co-Work Kerala',
     description: 'Find the best coworking spaces in Kerala',
     icons: {
-        icon: '/icon.svg',
+        icon: [
+            { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+            { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+            { url: '/icon.svg', type: 'image/svg+xml' },
+        ],
+        apple: '/apple-touch-icon.png',
     },
 };
 
