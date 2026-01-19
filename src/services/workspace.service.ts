@@ -75,7 +75,7 @@ export const getWorkspaces = async (params: GetWorkspacesParams = {}): Promise<W
         if (params.limit) queryParams.append('limit', params.limit.toString());
         if (params.search) queryParams.append('search', params.search);
 
-        const url = `${API_BASE_URL}/api/v1/spaces${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+        const url = `${API_BASE_URL}api/v1/spaces${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
 
         const response = await fetch(url, {
             next: { revalidate: 60 }, // Revalidate every 60 seconds
@@ -97,7 +97,7 @@ export const getWorkspaces = async (params: GetWorkspacesParams = {}): Promise<W
 
 export const getWorkspaceById = async (id: string): Promise<WorkspaceResponse | null> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/v1/spaces/${id}`, {
+        const response = await fetch(`${API_BASE_URL}api/v1/spaces/${id}`, {
             next: { revalidate: 60 }, // Revalidate every 60 seconds
             headers: {
                 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export const getWorkspaceById = async (id: string): Promise<WorkspaceResponse | 
 
 export const getFeaturedWorkspaces = async (): Promise<WorkspacesResponse | null> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/v1/spaces/featured`, {
+        const response = await fetch(`${API_BASE_URL}api/v1/spaces/featured`, {
             next: { revalidate: 60 }, // Revalidate every 60 seconds
             headers: {
                 'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ export interface CreateLeadInput {
 
 export const leadService = {
     createLead: async (data: CreateLeadInput) => {
-        const response = await apiClient.post('/api/v1/leads', data);
+        const response = await apiClient.post('api/v1/leads', data);
         return response.data;
     },
 };

@@ -8,7 +8,7 @@ export interface Location {
 
 export const getLocations = async (): Promise<Location[]> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/v1/locations`, {
+        const response = await fetch(`${API_BASE_URL}api/v1/locations`, {
             next: { revalidate: 60 }, // Revalidate every 60 seconds
             headers: {
                 'Content-Type': 'application/json',
