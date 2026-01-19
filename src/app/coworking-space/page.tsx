@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     },
 };
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const CoWorkingSpace = async () => {
     const [locations, workspacesResponse] = await Promise.all([getLocations(), getWorkspaces({})]);
 

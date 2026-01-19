@@ -48,6 +48,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
 }
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const Page = async ({ params }: PageProps) => {
     const { id } = await params;
     const response = await getWorkspaceById(id);

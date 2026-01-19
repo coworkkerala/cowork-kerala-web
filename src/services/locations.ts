@@ -1,4 +1,4 @@
-import apiClient from '@/lib/api-client';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000';
 
 export interface Location {
     id: string;
@@ -8,9 +8,20 @@ export interface Location {
 
 export const getLocations = async (): Promise<Location[]> => {
     try {
-        const response = await apiClient.get('/api/v1/locations');
-        if (response.data.success) {
-            return response.data.data;
+        const response = await fetch(`${API_BASE_URL}/api/v1/locations`, {
+            next: { revalidate: 60 }, // Revalidate every 60 seconds
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.success) {
+            return data.data;
         }
         return [];
     } catch (error) {

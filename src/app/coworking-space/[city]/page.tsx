@@ -31,6 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const CityWorkspacePage = async ({ params }: Props) => {
     const { city } = await params;
     // Capitalize the city name for the API call
@@ -46,7 +48,7 @@ const CityWorkspacePage = async ({ params }: Props) => {
     return (
         <Fixedw className="container mx-auto md:px-8 flex flex-col gap-12">
             <Header />
-            <HeroSection currentCity={city}/>
+            <HeroSection currentCity={city} />
             <FilterSection locations={locations} currentCity={city} />
             <WorkspaceListing workspaces={workspaces} locations={locations} />
             <Footer />

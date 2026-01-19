@@ -50,6 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const CityPrivateOfficePage = async ({ params }: Props) => {
     const { city } = await params;
     const displayCity = city.charAt(0).toUpperCase() + city.slice(1);

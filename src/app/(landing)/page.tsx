@@ -44,6 +44,9 @@ export const metadata: Metadata = {
         canonical: 'https://coworkkerala.com',
     },
 };
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const Page = async () => {
     const locations = await getLocations();
 

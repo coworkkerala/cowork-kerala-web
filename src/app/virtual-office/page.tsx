@@ -42,6 +42,8 @@ export const metadata: Metadata = {
     },
 };
 
+export const revalidate = 60; // Revalidate every 60 seconds
+
 const VirtualOfficePage = async () => {
     const locations = await getLocations();
 
